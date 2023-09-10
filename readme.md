@@ -84,7 +84,7 @@ or run the API using makefile
 make run-rr
 ```
 
-### Round Robin
+### Round Robin Implementation
 
 Round Robin is aload balancing algorithm that distributes incoming requests among a group of backend servers or resources. In this case, the algorithm will distributes the request from port 8080 to 8081 to 8082 and back to 8080 again.
 
