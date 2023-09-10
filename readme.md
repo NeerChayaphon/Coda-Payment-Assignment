@@ -20,7 +20,7 @@ This is an API which accepts an HTTP POST with JSON payload and respond with a s
 }
 ```
 
-### Installation
+### To start the API
 
 Clone the repository and go the SimpleAPI folder:
 
@@ -63,8 +63,12 @@ backendServers := []string{
 		"http://localhost:8080",
 		"http://localhost:8081",
 		"http://localhost:8082",
-	}
+    }
 ```
+
+These url can be change in the main.go file.
+
+### To start the API
 
 go the RoundRobinAPI folder:
 
