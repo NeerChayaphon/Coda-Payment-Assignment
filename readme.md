@@ -90,12 +90,12 @@ make run-rr
 
 ### Round Robin Implementation
 
-Round Robin is aload balancing algorithm that distributes incoming requests among a group of backend servers or resources. In this case, the algorithm will distributes the request from port 8080 to 8081 to 8082 and back to 8080 again.
+Round Robin is a load-balancing algorithm that distributes incoming requests among a group of backend servers or resources. In this case, the algorithm will distribute the request from port 8080 to ports 8081, 8082, and back to port 8080 again.
 
-If one of the server is down. The API also have a health check to validate the state of the server and won't distribute the request to that server. If the server is start to work again, Round Robin algorithm will back to distribute the request again.
+If one of the servers is down. The API also has a health check to validate the state of the server and won't distribute the request to that server. If the server starts to work again, the Round Robin algorithm will distribute the request again.
 
-If one of the server is slow (Slow response time), the API will mark the state as "IsSlow = true" and won't include in the Round Robin process.
+If one of the servers is slow (slow response time), the API will mark the state as "IsSlow = true" and won't include it in the round robin process.
 
-Round Robin run on the normal (fast) server first but if there is no fast server running but has only the slow one, Then the API will apply Round Robin to the slow API.It best to return slow response than no response and if the response is now normal. The API will reset the state.
+Round Robin runs on the normal (fast) server first, but if there is no fast server running but only the slow one, then the API will apply Round Robin to the slow API. It is better to return a slow response than no response, and if the response is now normal, The API will reset the state.
 
-If there is no healthy backend available, it will return error message.
+If there is no healthy backend available, it will return an error message.
